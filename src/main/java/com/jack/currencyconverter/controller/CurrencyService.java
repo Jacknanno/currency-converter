@@ -18,7 +18,7 @@ public class CurrencyService {
 
         Map rates = (Map) response.get("rates");
 
-        double rate = (double) rates.get(to);
+        double rate = ((Number) rates.get(to)).doubleValue();
        
         double converted = amount * rate;
 
