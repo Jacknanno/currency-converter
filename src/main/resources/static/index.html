@@ -2,18 +2,48 @@
 <html> 
     <head>
         <title>Currency Converter</title>
+        <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
-        <h1>Currency Converter</h1>
-        <input type="text" id="amount" placeholder="Amount" />
 
-        <input type="text" id="from" placeholder="From (USD)" />
-        <input type="text" id="to" placeholder="To (EUR)" />
+        <div class ="container">
 
-        <button onclick="convert()">Convert</button>
+          <h1>Brosnan's Currency Converter</h1>
 
-        <h2 id="result"></h2>
-        <script src="app.js"></script>
+          <div class="converter-box">
+            <input type="number" id="amount" placeholder="Enter amount" oninput="convert()" />
+            
+
+            <div class="selectors">
+                
+                <select id="from">
+                    <option vaalue="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CAD">CAD</option>
+                </select>
+
+                <span>→</span> 
+
+                <select id="to">
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="USD">USD</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CAD">CAD</option>
+                </select>
+                <button onclick="swapCurrencies()">Swap</button>
+           </div>
+
+           <button onclick="convert()">Convert</button>
+
+           <h2 id="result"></h2>
+        </div> 
+    </div>      
+
+    <script src="app.js"></script>
 
 
     </body>
