@@ -1,7 +1,8 @@
 package com.jack.currencyconverter.controller;
 
-import com.jack.currencyconverter.controller.CurrencyService;
 import org.springframework.web.bind.annotation.*;
+
+import com.jack.currencyconverter.service.CurrencyService;
 
 import java.util.Map;
 
