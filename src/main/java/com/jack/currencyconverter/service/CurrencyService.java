@@ -1,17 +1,22 @@
 package com.jack.currencyconverter.service;
 
+import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.jack.currencyconverter.model.Conversion;
 import com.jack.currencyconverter.respository.ConversionRepository;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
 public class CurrencyService {
 
-    private final ConversionRepository repository;
+
+    
+
+     private final ConversionRepository repository;
 
     public CurrencyService(ConversionRepository repository) {
         this.repository = repository;
@@ -42,6 +47,10 @@ public class CurrencyService {
             "convertedAmount", converted
         );
        
+    }
+
+    public List<Conversion> getAllConversion() {
+        return repository.findAll();
     }
     
 }

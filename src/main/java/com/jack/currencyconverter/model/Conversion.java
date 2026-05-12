@@ -23,4 +23,9 @@ public class Conversion {
     }
 
     // Getter and setters 
+    public String getFromCurrency() { return fromCurrency; }
+    public String getToCurrency() { return toCurrency; }
+    public double getAmount() { return amount; }
+    public double getResult() { return result; }
+
 }

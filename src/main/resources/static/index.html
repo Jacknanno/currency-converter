@@ -9,7 +9,7 @@
 
         <div class ="container">
 
-          <h1>Brosnan's Currency Converter</h1>
+          <h1>Currency Converter</h1>
 
           <div class="converter-box">
             <input type="number" id="amount" placeholder="Enter amount"  />
@@ -18,7 +18,7 @@
             <div class="selectors">
                 
                 <select id="from">
-                    <option vaalue="USD">USD</option>
+                    <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
                     <option value="JPY">JPY</option>
@@ -38,11 +38,20 @@
            </div>
 
            <button onclick="convert()">Convert</button>
+
            
 
            <h2 id="result"></h2>
+           
+           <h2> Conversion History </h2>
+           <div class="history-container">
+             <ul id="historyList"></ul>
+           </div> 
+
+          
         </div> 
-    </div>      
+    </div>  
+        
 
     
     </body>

@@ -53,3 +53,27 @@ button:hover {
     margin-top: 15px;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #334155;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+history-container {
+    max-height: 250px;
+    overflow-y: auto;
+    scroll-behavaior: smooth;
+}
+
+#historyList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+

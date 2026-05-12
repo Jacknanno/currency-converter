@@ -37,8 +37,12 @@ async function convert() {
     document.getElementById("result").innerText =
          `${amount} ${from} → ${data.convertedAmount.toFixed(2)} ${to}`;
 
-
+   loadHistory(); // Call the function to refresh the conversion history after a new conversion is made.
+  
 }
+
+window.onload = loadHistory; // Load conversion history when the page loads
+
 /* This is not working at the moment but will be resumed soon.
 // This event listener waits for the entire HTML document to be loaded and parsed before executing the function.
 document.addEventListener("DOMContentLoaded", function () {
@@ -62,5 +66,29 @@ function swapCurrencies() {
     from.value = to.value;
     to.value = temp;
 }
+
+// This function is intended to load the conversion history from the backend and display it in the frontend.
+async function loadHistory() {
+    const response = await fetch("/history");
+    const data = await response.json();
+
+ 
+
+    const list = document.getElementById("historyList");
+    list.innerHTML = ""; // Clear existing history
+
+    data.forEach(item => {
+        
+
+        const li = document.createElement("li");
+
+        li.innerText = 
+           `${item.amount} ${item.fromCurrency}  → ${item.result.toFixed(2)} ${item.toCurrency}`; 
+        list.appendChild(li);
+        
+    });
+
+}
+
 
 

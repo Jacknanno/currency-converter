@@ -2,8 +2,10 @@ package com.jack.currencyconverter.controller;
 
 import org.springframework.web.bind.annotation.*;
 
+import com.jack.currencyconverter.model.Conversion;
 import com.jack.currencyconverter.service.CurrencyService;
 
+import java.util.*;
 import java.util.Map;
 
 
@@ -26,7 +28,10 @@ public class CurrencyController {
 
         }
     
-        
-    
+    // This acts as http://localhost:8080/history to get the history of conversions allowing a user to view current history.
+   @GetMapping("/history")
+   public List<Conversion> getHistory() {
+      return currencyService.getAllConversion();
+   } 
      
 }
