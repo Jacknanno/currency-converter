@@ -26,11 +26,11 @@ public class User {
     public Long getId() {
         return id;
     }
-    
+    // Getter method to retrieve the username of the User entity.
     public String getUsername() {
         return username;
     }
-
+// Getter method to retrieve the password of the User entity.
     public String getPassword() {
         return password;
     }

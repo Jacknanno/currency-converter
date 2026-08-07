@@ -16,14 +16,22 @@ public class AuthController {
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
-    // The @PostMapping annotation indicates that this method will handle HTTP POST requests to the "/register" endpoint. It takes two parameters, 
-    // username and password, which are expected to be provided in the request body.
-    @GetMapping("/register")
+   // The register method handles HTTP GET requests to the "/register" endpoint. It takes a username and password as request parameters,
+   // calls the register method of the AuthService, and returns the result as a string response
+    @PostMapping("/register")
     public String register(
         @RequestParam String username,
         @RequestParam String password) {
 
             return authService.register(username, password);
         }
-    
+   // The login method handles HTTP POST requests to the "/login" endpoint. It takes a username and password as request parameters,
+   // calls the login method of the AuthService, and returns the result as a string response
+    @GetMapping("/login")
+    public String login(
+        @RequestParam String username,
+        @RequestParam String password) {
+            return authService.login(username, password);
+        }
+        
 }
